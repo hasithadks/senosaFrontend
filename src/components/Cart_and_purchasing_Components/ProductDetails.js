@@ -307,6 +307,20 @@ export default class ProductDetails extends Component {
 
                 },
                 () => {
+
+                if(this.state.userID != null){
+                    let {productId, userID, isLike} = this.state;
+                    let payload = {productId, userID, isLike};
+                    //console.log(payload);
+                    axios.post(configs.BASE_URL + '/favouriteProduct/add', payload)
+                        .then(() => this.componentDidMount());
+
+                }
+                else{
+                    swal("Can Like This Product", "Please Logged to the system!!!", "warning");
+
+                }
+
                     let {productId, userID, isLike} = this.state;
                     let payload = {productId, userID, isLike};
                     //console.log(payload);

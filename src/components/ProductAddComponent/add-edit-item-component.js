@@ -11,7 +11,7 @@ const  Quantity = props =>(
         <td className="col-sm-3">{props.quantity.item_colour}</td>
         <td className="col-sm-3">{props.quantity.item_quantity}</td>
         <td className="col-sm-3">
-            <img height="100" src={require('../uploads/'+props.quantity.item_productImage)} alt="" width="100"/>
+            {/*<img height="100" src={require('../uploads/'+props.quantity.item_productImage)} alt="" width="100"/>*/}
         </td>
         <td>
             <div>
@@ -624,16 +624,16 @@ export default class AddEditItem extends Component{
                                             <div className="row">
 
                                             <div className="col-sm-5">
-                                                <div className="custom-file" style={{marginTop:30}} >
-                                                    <input type="file"
-                                                           name="file" required
-                                                           className="custom-file-input"
-                                                           id="customFileLangHTML"
-                                                           //value = {this.state.item_image}
-                                                           onChange={this.onChangeItemImage} />
-                                                    <label className="custom-file-label " htmlFor="customFileLangHTML" data-browse="Browse" >Choose Image</label>
+                                                {/*<div className="custom-file" style={{marginTop:30}} >*/}
+                                                {/*    <input type="file"*/}
+                                                {/*           name="file" required*/}
+                                                {/*           className="custom-file-input"*/}
+                                                {/*           id="customFileLangHTML"*/}
+                                                {/*           //value = {this.state.item_image}*/}
+                                                {/*           onChange={this.onChangeItemImage} />*/}
+                                                {/*    <label className="custom-file-label " htmlFor="customFileLangHTML" data-browse="Browse" >Choose Image</label>*/}
 
-                                                </div>
+                                                {/*</div>*/}
                                             </div>
                                                 <div className="col-sm-3">
                                                 </div>

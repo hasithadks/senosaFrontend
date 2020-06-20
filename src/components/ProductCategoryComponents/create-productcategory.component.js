@@ -29,7 +29,7 @@ export default class CreateProductCategory extends Component{
 
         console.log(productcategory);
 
-        axios.post('http://localhost:5000/pcategory/add', productcategory)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/pcategory/add', productcategory)
             .then(res => console.log(res.data));
 
         window.location = '/admin/pcategory';

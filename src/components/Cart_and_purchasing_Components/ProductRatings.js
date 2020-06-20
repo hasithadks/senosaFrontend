@@ -176,7 +176,7 @@ export default class ProductRatings extends Component {
 
                     });
                 console.log("product ID before get product: " + td.productID)
-                axios.get('http://localhost:5000/products/itemId/' + td.productID)
+                axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/products/itemId/' + td.productID)
                     .then(response => {
                         //console.log(response.data);
                         if (response.data.length > 0) {

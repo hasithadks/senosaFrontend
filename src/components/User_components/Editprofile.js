@@ -32,7 +32,7 @@ export default class Editprofile extends Component {
 
     componentDidMount() {
     if(localStorage.getItem('user_id') != null){
-    axios.get('http://localhost:5000/users/'+ localStorage.getItem('user_id'))
+    axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/users/'+ localStorage.getItem('user_id'))
                 .then(response =>{
                     this.setState({
                         user_id : localStorage.getItem('user_id'),
@@ -125,7 +125,7 @@ export default class Editprofile extends Component {
 
         if (this.state.user_phone.length >= 9 && this.state.user_phone.length <= 10  ) {
             if (this.state.user_username.length > 5) {
-                axios.post('http://localhost:5000/users/update/'+this.state.user_id,user)
+                axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/users/update/'+this.state.user_id,user)
                     .then(res => {
                         localStorage.setItem('user_email',this.state.user_email);
                         localStorage.setItem('user_username',this.state.user_username);

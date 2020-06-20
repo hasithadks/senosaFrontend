@@ -22,7 +22,7 @@ export default class PasswordChange extends Component {
 
     componentDidMount() {
         if(localStorage.getItem('user_email') != null){
-            axios.get('http://localhost:5000/userAccounts/username/'+ localStorage.getItem('user_email'))
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/username/'+ localStorage.getItem('user_email'))
                 .then(response =>{
                     this.setState({
                         user_id : localStorage.getItem('user_id'),
@@ -74,11 +74,11 @@ export default class PasswordChange extends Component {
                     localStorage.setItem('user_email', this.state.user_email);
                     localStorage.setItem('user_password', this.state.user_Newpassword);
 
-                    axios.put('http://localhost:5000/userAccounts/update/account/'+ this.state.user_email,user)
+                    axios.put('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/update/account/'+ this.state.user_email,user)
                         .then(res => {
                             window.location='/login';
 
-                            axios.post('http://localhost:5000/userAccounts/logout/'+ localStorage.getItem('user_email'),user)
+                            axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/logout/'+ localStorage.getItem('user_email'),user)
                                 .then(response =>{
                                     this.setState({
                                         user: response.data

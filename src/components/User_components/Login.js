@@ -51,7 +51,7 @@ export default class Login extends Component{
             user_password: this.state.user_password,
         }
 
-            axios.post('http://localhost:5000/userAccounts/username/'+ this.state.user_username,detail)
+            axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/username/'+ this.state.user_username,detail)
                 .then(response =>{
                     window.location='/home';
                     this.setState({

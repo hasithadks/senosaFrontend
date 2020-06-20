@@ -25,7 +25,7 @@ export default class ProductCategoryList extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/pcategory/')
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/pcategory/')
             .then(response => {
                 this.setState({ pcategory : response.data})
             })
@@ -35,7 +35,7 @@ export default class ProductCategoryList extends Component{
     }
 
     deletePcategory(id){
-        axios.delete('http://localhost:5000/pcategory/'+id)
+        axios.delete('https://senosaonlineshoppingwebsite.herokuapp.com/pcategory/'+id)
             .then(res => console.log(res.date));
 
         this.setState({

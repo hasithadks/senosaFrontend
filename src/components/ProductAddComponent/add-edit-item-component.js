@@ -120,7 +120,7 @@ export default class AddEditItem extends Component{
 
     componentDidMount() {
         if(this.props.match.params.id != null){
-            axios.get('http://localhost:5000/products/'+ this.props.match.params.id)
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/products/'+ this.props.match.params.id)
                 .then(response =>{
                     this.setState({
                         item_id : response.data.item_id,
@@ -146,7 +146,7 @@ export default class AddEditItem extends Component{
         }
 
         if(this.state.item_id != null){
-            axios.get('http://localhost:5000/quantity/'+this.state.item_id)
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/'+this.state.item_id)
                 .then(response =>{
                     this.setState({quantity: response.data});
                 })
@@ -160,7 +160,7 @@ export default class AddEditItem extends Component{
 
         //catogory dropdown
         if (this.state.item_id != null) {
-            axios.get('http://localhost:5000/pcategory')
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/pcategory')
                 .then(response => {
                     //this.setState({productQuantities: response.data});
                     let CategoryList = [];
@@ -283,7 +283,7 @@ export default class AddEditItem extends Component{
             formdata.append('productImage',file);
 
             axios({
-                url:`http://localhost:5000/quantity/`,
+                url:`https://senosaonlineshoppingwebsite.herokuapp.com/quantity/`,
                 method: "POST",
                 data:formdata
             }).then((res)=>{
@@ -319,7 +319,7 @@ export default class AddEditItem extends Component{
             productImage: file,
         };
 
-        axios.post('http://localhost:5000/quantity/update/' + this.state.id, editQuantity)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/update/' + this.state.id, editQuantity)
             .then((res) => {
                 swal("Data Saved Successfully!", "Your Details has been Update Successfully!", "success");
             }, (err) => {
@@ -341,7 +341,7 @@ export default class AddEditItem extends Component{
     }
 
     deleteQuantity(id){
-        axios.delete('http://localhost:5000/quantity/delete/'+id)
+        axios.delete('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/delete/'+id)
             .then((res)=>{
             swal("Delete Successfully!", "Your Details has been Delete Successfully!", "success");
         },(err)=>{
@@ -382,7 +382,7 @@ export default class AddEditItem extends Component{
             item_image: this.state.item_image
         };
 
-        axios.post('http://localhost:5000/products/add',newItem)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/products/add',newItem)
             .then(res => {this.setState({
                 item_id: res.data.item_id})
             })
@@ -426,11 +426,11 @@ export default class AddEditItem extends Component{
             item_image: this.state.item_image
         };
 
-        // axios.post('http://localhost:5000/products/update/'+this.props.match.params.id,editItem)
+        // axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/products/update/'+this.props.match.params.id,editItem)
         //     .then(res => console.log(res.data))
         //     .catch(swal("Good job!", "You clicked the button!", "warning"));
 
-        axios.post('http://localhost:5000/products/update/'+this.props.match.params.id,editItem)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/products/update/'+this.props.match.params.id,editItem)
             .then(res => console.log(res.data));
 
         swal("Good job!", "Your Details has been Update Successfully!", "success");

@@ -30,7 +30,7 @@ export default class EditItem extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/products/'+ this.props.match.params.id)
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/products/'+ this.props.match.params.id)
             .then(response =>{
                 this.setState({
                     item_name : response.data.item_name,
@@ -128,7 +128,7 @@ export default class EditItem extends Component{
             item_image: this.state.item_image
         };
 
-        axios.post('http://localhost:5000/products/update/'+this.props.match.params.id,editItem)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/products/update/'+this.props.match.params.id,editItem)
             .then(res => console.log(res.data));
         this.props.history.push('/');
 

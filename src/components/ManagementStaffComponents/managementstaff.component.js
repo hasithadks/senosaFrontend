@@ -28,7 +28,7 @@ export default class ManagementStaffList extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/mstaff/')
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/mstaff/')
             .then(response => {
                 this.setState({ mstaff : response.data})
             })
@@ -38,7 +38,7 @@ export default class ManagementStaffList extends Component{
     }
 
     deleteMstaff(id){
-        axios.delete('http://localhost:5000/mstaff/'+id)
+        axios.delete('https://senosaonlineshoppingwebsite.herokuapp.com/mstaff/'+id)
             .then(res => console.log(res.date));
 
         this.setState({

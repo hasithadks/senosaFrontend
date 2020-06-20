@@ -51,7 +51,7 @@ export default class CreateManagementStaff extends Component{
 
         axios({
             method: 'post',
-            url: 'http://localhost:5000/mstaff/add',
+            url: 'https://senosaonlineshoppingwebsite.herokuapp.com/mstaff/add',
             headers: {},
             data: managementstaff,
         }).then(res => console.log(res.data));

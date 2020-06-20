@@ -64,7 +64,7 @@ export default class ItemNav extends Component{
             user_email: this.state.user_email,
         };
 
-        axios.post('http://localhost:5000/userAccounts/logout/' + localStorage.getItem('user_email'), user)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/logout/' + localStorage.getItem('user_email'), user)
             .then(response => {
                 this.setState({
                     user: response.data

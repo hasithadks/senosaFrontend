@@ -18,7 +18,7 @@ export default class EditManagementStaff extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/mstaff/'+this.props.match.params.id)
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/mstaff/'+this.props.match.params.id)
             .then(response =>{
                 this.setState({
                     username: response.data.username,
@@ -71,7 +71,7 @@ export default class EditManagementStaff extends Component{
 
         axios({
             method: 'post',
-            url: 'http://localhost:5000/mstaff/update/'+this.props.match.params.id,
+            url: 'https://senosaonlineshoppingwebsite.herokuapp.com/mstaff/update/'+this.props.match.params.id,
             headers: {},
             data: managementstaff,
         }).then(res => console.log(res.data));

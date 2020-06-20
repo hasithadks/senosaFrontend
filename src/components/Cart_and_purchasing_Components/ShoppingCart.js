@@ -117,7 +117,7 @@ export default class ShoppingCart extends Component {
                         console.log("Delete From DB!!!")
                     });
 
-                axios.get('http://localhost:5000/quantity/qty/' + item.quantities_id)
+                axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/qty/' + item.quantities_id)
                     .then(response => {
                         console.log("Quantities id send and get Data");
                         console.log(response.data);
@@ -130,7 +130,7 @@ export default class ShoppingCart extends Component {
                             item_quantity : item_quantity
                         }
 
-                         axios.put('http://localhost:5000/quantity/update/itemQuantity/'+item.quantities_id,payload)
+                         axios.put('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/update/itemQuantity/'+item.quantities_id,payload)
                              .then(res => console.log(res.data));
                     });
                 this.componentDidMount();

@@ -110,14 +110,14 @@ constructor(props) {
             if (this.state.user_username.length > 5){
                 if (this.state.user_password.length>5){
 
-                    axios.post('http://localhost:5000/users/add',user)
+                    axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/users/add',user)
                         .then(response =>{
                             this.setState({
                                 users: response.data,
                             });
                         });
 
-                    axios.post('http://localhost:5000/userAccounts/add',account)
+                    axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/add',account)
                         .then(response =>{
                             this.setState({
                                 users: response.data,

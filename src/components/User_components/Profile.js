@@ -39,7 +39,7 @@ export default class Profile extends Component {
 
     componentDidMount() {
         this.userList();
-        axios.get('http://localhost:5000/users/username/'+ localStorage.getItem('user_username'))
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/users/username/'+ localStorage.getItem('user_username'))
             .then(response =>{
                 this.setState({user: response.data});
 
@@ -84,7 +84,7 @@ export default class Profile extends Component {
             user_email : localStorage.getItem('user_email'),
         }
 
-        axios.delete('http://localhost:5000/users/delete/' + this.state.user_email)
+        axios.delete('https://senosaonlineshoppingwebsite.herokuapp.com/users/delete/' + this.state.user_email)
             .then(response =>{
                 this.setState({
                     users: response.data
@@ -94,7 +94,7 @@ export default class Profile extends Component {
                 console.log(error);
             });
 
-        axios.delete('http://localhost:5000/userAccounts/delete/' + this.state.user_email)
+        axios.delete('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/delete/' + this.state.user_email)
             .then(response =>{
                 this.setState({
                     users: response.data

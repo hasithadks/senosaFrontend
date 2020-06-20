@@ -37,7 +37,7 @@ export default class ItemLists extends Component{
     }
 
     componentDidUpdate() {
-        axios.get('http://localhost:5000/products/')
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/products/')
             .then(response =>{
                 this.setState({products: response.data});
             })
@@ -47,12 +47,12 @@ export default class ItemLists extends Component{
     }
 
     deleteProduct(pid,qid){
-        axios.delete('http://localhost:5000/products/delete/'+pid)
+        axios.delete('https://senosaonlineshoppingwebsite.herokuapp.com/products/delete/'+pid)
             .then(res => console.log(res.data));
         this.setState({
             products:this.state.products.filter(el => el.pid !==pid)
         });
-        axios.delete('http://localhost:5000/quantity/delete/qty/'+qid)
+        axios.delete('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/delete/qty/'+qid)
             .then(res => console.log(res.data));
         this.setState({
             //quantity:this.state.quantity.filter(el => el.qid !==qid)

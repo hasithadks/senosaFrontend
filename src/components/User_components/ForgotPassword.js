@@ -27,7 +27,7 @@ export default class NavBar extends Component {
         };
 
         if (this.state.user_username.length > 5){
-            axios.get('http://localhost:5000/userAccounts/forgot/'+ this.state.user_username)
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/forgot/'+ this.state.user_username)
                 .then(res => console.log((res.data)));
 
             alert("check your email");

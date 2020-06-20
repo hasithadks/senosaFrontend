@@ -283,7 +283,7 @@ export default class AddEditItem extends Component{
             formdata.append('productImage',file);
 
             axios({
-                url:`https://senosaonlineshoppingwebsite.herokuapp.com/quantity/`,
+                url:`https://senosaonlineshoppingwebsite.herokuapp.com/quantity/add`,
                 method: "POST",
                 data:formdata
             }).then((res)=>{
@@ -663,7 +663,6 @@ export default class AddEditItem extends Component{
                                             <th>Size</th>
                                             <th>Color</th>
                                             <th>Quantity</th>
-                                            <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>

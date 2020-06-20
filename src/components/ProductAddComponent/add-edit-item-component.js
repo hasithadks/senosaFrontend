@@ -270,33 +270,45 @@ export default class AddEditItem extends Component{
             console.log(`item id: ${this.state.item_id}`);
             console.log(`item colour: ${this.state.item_colour}`);
             console.log(`item size: ${this.state.item_size}`);
-            console.log(`item image: ${this.state.file}`);
+            // console.log(`item image: ${this.state.file}`);
 
-            let file = this.state.file;
+            // let formdata = new FormData();
+            //
+            // formdata.append('item_id',this.state.item_id);
+            // formdata.append('item_size',this.state.item_size);
+            // formdata.append('item_colour',this.state.item_colour);
+            // formdata.append('item_quantity',this.state.item_quantity);
+            //
+            //
+            // axios({
+            //     url:`https://senosaonlineshoppingwebsite.herokuapp.com/quantity/`,
+            //     method: "POST",
+            //     data:formdata
+            // }).then((res)=>{
+            //     swal("Data Saved Successfully!", "Your Details has been Saved Successfully!", "success");
+            // },(err)=>{
+            //     swal("Error!", "Try Again!", "warning");
+            // });
 
-            let formdata = new FormData();
+            const newItem = {
+                item_id : this.state.item_id,
+                item_size : this.state.item_size,
+                item_colour : this.state.item_colour,
+                item_quantity : this.state.item_quantity,
+            };
 
-            formdata.append('item_id',this.state.item_id);
-            formdata.append('item_size',this.state.item_size);
-            formdata.append('item_colour',this.state.item_colour);
-            formdata.append('item_quantity',this.state.item_quantity);
-            formdata.append('productImage',file);
-
-            axios({
-                url:`https://senosaonlineshoppingwebsite.herokuapp.com/quantity/add`,
-                method: "POST",
-                data:formdata
-            }).then((res)=>{
-                swal("Data Saved Successfully!", "Your Details has been Saved Successfully!", "success");
-            },(err)=>{
-                swal("Error!", "Try Again!", "warning");
-            });
+            axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/',newItem)
+                .then(res => {this.setState({
+                    item_id: res.data.item_id})
+                })
+                .catch(//swal("Good job!", "You clicked the button!", "warning"
+                );
+            swal("Data Saved Successfully!", "Your Details has been Saved Successfully!", "success");
 
             this.setState({
                 item_size: '',
                 item_colour: '',
-                item_quantity:'',
-                file: '',
+                item_quantity:''
             });
         }
         else{
@@ -316,7 +328,7 @@ export default class AddEditItem extends Component{
             item_size: this.state.item_size,
             item_colour: this.state.item_colour,
             item_quantity: this.state.item_quantity,
-            productImage: file,
+            // productImage: file,
         };
 
         axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/update/' + this.state.id, editQuantity)

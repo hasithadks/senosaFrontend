@@ -84,7 +84,7 @@ export default class AddEditItem extends Component{
 
     //display quantities of the product
     fillQuantity(id){
-        axios.get('http://localhost:5000/quantity/qty/'+ id)
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/qty/'+ id)
             .then(response =>{
                 this.setState({
                     id :response.data._id,
@@ -105,7 +105,7 @@ export default class AddEditItem extends Component{
 
     componentDidUpdate() {
         if(this.state.item_id != null){
-            axios.get('http://localhost:5000/quantity/'+this.state.item_id)
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/'+this.state.item_id)
                 .then(response =>{
                     this.setState({quantity: response.data});
                 })

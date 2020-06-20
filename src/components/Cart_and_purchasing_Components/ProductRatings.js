@@ -109,7 +109,7 @@ export default class ProductRatings extends Component {
 
         console.log("Update Payload:");
         console.log(payload);
-        axios.post('http://localhost:5000/rateProducts/update/' + this.state.RateProductID, payload)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/rateProducts/update/' + this.state.RateProductID, payload)
             .then(res => console.log(res.data));
 
     }

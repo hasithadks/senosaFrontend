@@ -42,7 +42,7 @@ export default class ResetPassword extends Component {
 
         if(this.state.user_Newpassword === this.state.user_confirmPassword){
             if (this.state.user_Newpassword > 5){
-                axios.put('http://localhost:5000/userAccounts/reset/' + this.state.user_email,user)
+                axios.put('https://senosaonlineshoppingwebsite.herokuapp.com/userAccounts/reset/' + this.state.user_email,user)
                     .then(res => console.log((res.data)));
 
                 alert("Check your email");

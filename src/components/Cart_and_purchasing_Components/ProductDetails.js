@@ -80,7 +80,7 @@ export default class ProductDetails extends Component {
         let pID = 0;
         let uID = 0;
         if (this.props.match.params.id != null) {
-            axios.get('http://localhost:5000/products/itemId/' + this.props.match.params.id)
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/products/itemId/' + this.props.match.params.id)
                 .then(response => {
                     let userEmail = localStorage.getItem('user_username');
                     console.log("User Email : " + userEmail);
@@ -163,7 +163,7 @@ export default class ProductDetails extends Component {
         // + this.props.match.params.id
         if (this.props.match.params.id != null) {
             console.log("find qty ID: " + this.props.match.params.id)
-            axios.get('http://localhost:5000/quantity/' + this.props.match.params.id)
+            axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/' + this.props.match.params.id)
                 .then(response => {
                     this.setState({productQuantities: response.data});
                     let sizeList = [];

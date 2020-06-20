@@ -15,7 +15,7 @@ export default class EditProductCategory extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/pcategory/'+this.props.match.params.id)
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/pcategory/'+this.props.match.params.id)
             .then(response =>{
                 this.setState({
                     categoryname: response.data.categoryname
@@ -41,7 +41,7 @@ export default class EditProductCategory extends Component{
 
         console.log(productcategory);
 
-        axios.post('http://localhost:5000/pcategory/update/'+this.props.match.params.id, productcategory)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/pcategory/update/'+this.props.match.params.id, productcategory)
             .then(res => console.log(res.data));
 
         window.location = '/admin/pcategory';

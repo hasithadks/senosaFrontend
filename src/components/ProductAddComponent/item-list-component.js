@@ -27,7 +27,7 @@ export default class ItemLists extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/products/')
+        axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/products/')
             .then(response =>{
                 this.setState({products: response.data});
             })

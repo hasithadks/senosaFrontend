@@ -282,7 +282,7 @@ export default class ShoppingCartProcess extends Component {
         let {userID, fullName, phoneNo, updateProvince, district, city, address} = this.state;
         let payload = {userID, fullName, phoneNo, updateProvince, district, city, address};
 
-        axios.post('http://localhost:5000/deliveryDetails/update/' + this.state.detailsID, payload)
+        axios.post('https://senosaonlineshoppingwebsite.herokuapp.com/deliveryDetails/update/' + this.state.detailsID, payload)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -361,7 +361,7 @@ export default class ShoppingCartProcess extends Component {
                             console.log("Delete From DB!!!")
                         });
 
-                    axios.get('http://localhost:5000/quantity/qty/' + item.quantities_id)
+                    axios.get('https://senosaonlineshoppingwebsite.herokuapp.com/quantity/qty/' + item.quantities_id)
                         .then(response => {
                             console.log("Quantities id send and get Data");
                             console.log(response.data);

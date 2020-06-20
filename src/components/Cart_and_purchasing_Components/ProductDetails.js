@@ -317,7 +317,12 @@ export default class ProductDetails extends Component {
 
                 }
                 else{
-                    swal("Can Like This Product", "Please Logged to the system!!!", "warning");
+                    this.setState({
+                        isLike: false
+                    },()=>{
+                        swal("Can Like This Product", "Please Logged to the system!!!", "warning");
+                    });
+
 
                 }
 

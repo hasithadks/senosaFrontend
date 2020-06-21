@@ -409,6 +409,7 @@ export default class AddEditItem extends Component{
         } else{
             alert("You must fill in all of the fields.");
         }
+        window.location = 'https://senosafrontend.herokuapp.com/admin/itemlist';
     }
 
     editProduct(e){
